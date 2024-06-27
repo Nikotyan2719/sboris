@@ -1,52 +1,40 @@
 module.exports = {
-	'globals': {
-		'NODE_ENV': true,
-		'PUBLIC_PATH': true
-  },
-	'env': {
-		'es6': true,
-		'browser': true,
-		'node': true,
-		'jquery': true
-  },
-	'extends': 'eslint:recommended',
-	'plugins': [
-		'standard',
-		'promise'
+  extends: [
+    'eslint:recommended',
+    'plugin:react/recommended',
+    'plugin:prettier/recommended',
   ],
-	'overrides': [
-		{
-			'env': {
-				'es6': true,
-				'browser': true,
-				'node': true,
-				'jquery': true
-			},
-			'files': [
-				'.eslintrc.{js,cjs}'
+  env: {
+    browser: true,
+    es2021: true,
+    node: true,
+  },
+  overrides: [
+    {
+      files: ['.eslintrc.{ls,cjs}'],
+      env: {
+        node: true,
+      },
+      parserOptions: {
+        sourceType: 'script',
+      },
+    },
   ],
-			'parserOptions': {
-				'sourceType': 'module'
-    }
-  }
-	],
-	'parser': '@babel/eslint-parser',
-	'parserOptions': {
-		'ecmaVersion': 'latest',
-		'sourceType': 'module',
-	},
-	'rules': {
-		'linebreak-style': [
-			'error',
-			'unix'
-		],
-		'quotes': [
-			'error',
-			'single'
-		],
-		'semi': [
-			'error',
-			'always'
-		]
-}
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+  },
+  plugins: ['react'],
+  rules: {
+    'no-var': 'error',
+    'prefer-const': 'warn',
+    'react/react-in-jsx-scope': 'off',
+    'react/prop-types': 'off',
+    'prettier/prettier': [
+      'warn',
+      {
+        endOfLine: 'auto',
+      },
+    ],
+  },
 };

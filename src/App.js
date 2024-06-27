@@ -1,4 +1,4 @@
-import { Button, Container } from 'react-bootstrap'
+import { Button, Container } from 'react-bootstrap';
 
 function App() {
   return (
