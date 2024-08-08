@@ -4,7 +4,36 @@
   background-color: black;
 
   @include media-breakpoint-down(lg) {
-
     background-color: red;
   }
+
+
+}
+
+.headerMenu{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 79px;
+  background-color: white;
+  padding: 0 6px;
+}
+
+.firstCol{
+  display: flex;
+}
+.logo{
+  width: 39px;
+  height: 39px;
+}
+.title{
+  color: black;
+  font-size: 28px;
+  margin: 0px 0px 0px 20px;
+
+}
+.links{
+  width: 220px;
+  display: flex;
+  justify-content: space-between;
 }

@@ -10,7 +10,7 @@ const IconTelegram = () => {
       x="0px"
       y="0px"
       viewBox="0 0 1000 1000"
-      // style="enable-background:new 0 0 1000 1000;"
+      style={{ fill: 'white', height: '22px', width: '20px' }}
       xmlSpace="preserve"
     >
       <g>
