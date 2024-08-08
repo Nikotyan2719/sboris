@@ -1,11 +1,11 @@
-import { Button, Container } from 'react-bootstrap';
+// import {Button, Col, Container, Row} from 'react-bootstrap';
+import Header from './assets/components/Header/Header';
+import './index.scss';
 
 function App() {
   return (
     <div className="App">
-      <Container>
-        <Button>test</Button>
-      </Container>
+      <Header />
     </div>
   );
 }

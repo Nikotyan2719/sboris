@@ -28,6 +28,7 @@ module.exports = {
   rules: {
     'no-var': 'error',
     'prefer-const': 'warn',
+    'react/no-unknown-property': 'off',
     'react/react-in-jsx-scope': 'off',
     'react/prop-types': 'off',
     'prettier/prettier': [
