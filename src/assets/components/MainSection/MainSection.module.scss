@@ -1,6 +1,5 @@
 .root{
   padding-top: 100px;
-  background: linear-gradient(#00419b 0%, #00327b 40%);
 }
 
 
@@ -9,5 +8,9 @@
 
   @include media-breakpoint-up(lg) {
     max-width: 1920px
+  }
+  @include media-breakpoint-down(lg) {
+    display: flex;
+    flex-direction: column;
   }
 }

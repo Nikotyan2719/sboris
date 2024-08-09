@@ -22,7 +22,7 @@
 .canvas{
   width: 356px;
   height: 360px;
-  background-color: red;
+  background-color: $primary ;
   border-radius: 50px;
   z-index: 1;
 
@@ -30,6 +30,8 @@
 .shadow{
   position: absolute;
   bottom: -20px;
+  box-shadow: none;
+  --bs-box-shadow: none
 }
 .btnList{
   margin-top: 50px;
@@ -37,5 +39,8 @@
   grid-template-columns: repeat(2, 1fr);
   grid-column-gap: 18px;
   grid-row-gap: 24px;
+
+
 }
+
 

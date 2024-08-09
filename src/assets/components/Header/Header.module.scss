@@ -2,12 +2,6 @@
   background-color: #000;
   border-bottom: 1px solid #fff;
   padding: 18px 0;
-
-  @include media-breakpoint-down(lg) {
-    background-color: red;
-  }
-
-
 }
 
 .headerMenu{
