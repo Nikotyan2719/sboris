@@ -4,17 +4,16 @@
   background-color: $primary;
   padding: 16px 0;
   margin-bottom: 8px;
-
-
-  //@include media-breakpoint-down(lg) {
-  //  background-color: red;
-  //}
-
 }
 .footerInner{
   font-size: 29px;
   color: white;
   display: flex;
   justify-content: center;
-  align-items: center;
+
+  @include media-breakpoint-down(lg) {
+    font-size: 19px;
+    text-align: center;
+  }
+
 }

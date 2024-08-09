@@ -9,6 +9,9 @@
     div {
       line-height: 0.75;
     }
+    @include media-breakpoint-down(lg) {
+      font-size: 40px;
+    }
   }
 }
 .canvasBlock{
@@ -40,7 +43,15 @@
   grid-column-gap: 18px;
   grid-row-gap: 24px;
 
-
+  @include media-breakpoint-down(lg) {
+    grid-template-columns: 1fr;
+    grid-row-gap: 15px;
+  }
+}
+.custom{
+  @include media-breakpoint-down(lg) {
+    font-size: 26px;
+  }
 }
 
 

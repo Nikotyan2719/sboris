@@ -15,12 +15,12 @@ const LeftSide = () => {
         <img src="/Images/logo/shadow-picture.png" className={stl.shadow}></img>
       </div>
       <div className={stl.btnList}>
-        <Button>UPLOAD STICKER</Button>
-        <Button>UPLOAD BACKGROUND</Button>
-        <Button>ADD TEXT</Button>
-        <Button>RESET</Button>
-        <Button>GENERATE RANDOM</Button>
-        <Button>SAVE MEME</Button>
+        <Button className={stl.custom}>UPLOAD STICKER</Button>
+        <Button className={stl.custom}>UPLOAD BACKGROUND</Button>
+        <Button className={stl.custom}>ADD TEXT</Button>
+        <Button className={stl.custom}>RESET</Button>
+        <Button className={stl.custom}>GENERATE RANDOM</Button>
+        <Button className={stl.custom}>SAVE MEME</Button>
       </div>
     </div>
   );

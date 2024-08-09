@@ -21,7 +21,11 @@ const Header = () => {
             <a className={`${styles.title} text-decoration-none`}>WEBSITE</a>
           </div>
           <div className={styles.links}>
-            <Links backgroundColor="rgb(49, 167, 220)" Icon={IconTelegram} />
+            <Links
+              backgroundColor="rgb(49, 167, 220)"
+              Icon={IconTelegram}
+              Link="https://t.me/boris_cto"
+            />
             <Links backgroundColor="rgb(0, 0, 0)" Icon={IconX} />
             <Links backgroundColor="rgb(0, 0, 0)" Icon={IconEagle} />
             <Links backgroundColor="rgb(255, 255, 255)" Icon={IconDex} />

@@ -1,11 +1,13 @@
 .outBorder{
   border: 2px solid $gray-500;
   border-radius: 100%;
-
   transition: $transition-base;
-  transition-property: transform  ;
-
+  transition-property: transform;
   padding: 1px;
+  &:hover {
+    transform: scale(1.1);
+  }
+
 }
 .inBorder{
   display: flex;
