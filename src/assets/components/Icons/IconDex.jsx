@@ -7,7 +7,7 @@ const IconDex = () => {
       x="0px"
       y="0px"
       viewBox="0 0 1000 1000"
-      style={{ fill: 'rgb(30, 166,195)', height: '25px', width: '27px' }}
+      style={{ fill: 'rgb(30, 166,195)', height: '100px', width: '100px' }}
       xmlSpace="preserve"
     >
       <g>

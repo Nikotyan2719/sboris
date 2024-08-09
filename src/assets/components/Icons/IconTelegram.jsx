@@ -10,7 +10,12 @@ const IconTelegram = () => {
       x="0px"
       y="0px"
       viewBox="0 0 1000 1000"
-      style={{ fill: 'white', height: '22px', width: '20px' }}
+      style={{
+        fill: 'white',
+        height: '30px',
+        width: '28px',
+        paddingRight: '4px',
+      }}
       xmlSpace="preserve"
     >
       <g>

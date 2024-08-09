@@ -1,3 +1,7 @@
 @import "fonts/font-ruslan-display/font-ruslan-display";
 @import "fonts/font-peachy-keen-JF/font-peachy-keen-JF";
 @import "assets/styles/bootstrap";
+
+body {
+  --bs-body-line-height: 1
+}

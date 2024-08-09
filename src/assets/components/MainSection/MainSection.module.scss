@@ -1,0 +1,13 @@
+.root{
+  padding-top: 100px;
+  background: linear-gradient(#00419b 0%, #00327b 40%);
+}
+
+
+.container{
+  display: flex;
+
+  @include media-breakpoint-up(lg) {
+    max-width: 1920px
+  }
+}

@@ -1,22 +1,22 @@
 import styles from './Header.module.scss';
 import { Container } from 'react-bootstrap';
-import IconTelegram from '../icons/IconTelegram';
-import IconX from '../icons/IconX';
+import IconTelegram from '../Icons/IconTelegram';
+import IconX from '../Icons/IconX';
 import Links from '../Links/Links';
-import IconEagle from '../icons/IconEagle';
-import IconDex from '../icons/IconDex';
+import IconEagle from '../Icons/IconEagle';
+import IconDex from '../Icons/IconDex';
+import IconCube from '../Icons/IconCube';
 
 const Header = () => {
   return (
     <header className={styles.root}>
       <Container>
         <div className={styles.headerMenu}>
-          <div className={styles.firstCol}>
-            <img src="/Images/logo/logo.png" alt="" className={styles.logo} />
-
-            <h1 className={styles.title}>$BORIS</h1>
+          <div className={styles.headerTitle}>
+            <img src="/images/logo/logo.png" alt="" className={styles.logo} />
+            <span className={styles.title}>$BORIS</span>
           </div>
-          <div>
+          <div className={styles.headerNav}>
             <a className={styles.title}>MEME GENERATOR</a>
             <a className={`${styles.title} text-decoration-none`}>WEBSITE</a>
           </div>
@@ -25,11 +25,10 @@ const Header = () => {
             <Links backgroundColor="rgb(0, 0, 0)" Icon={IconX} />
             <Links backgroundColor="rgb(0, 0, 0)" Icon={IconEagle} />
             <Links backgroundColor="rgb(255, 255, 255)" Icon={IconDex} />
-            <Links />
+            <Links backgroundColor="rgb(47, 56, 71)" Icon={IconCube} />
           </div>
         </div>
       </Container>
-      <IconTelegram />
     </header>
   );
 };
