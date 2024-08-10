@@ -4,7 +4,9 @@
 
 
 .container{
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-column-gap: 142px;
 
   @include media-breakpoint-up(lg) {
     max-width: 1920px

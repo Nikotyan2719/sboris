@@ -1,12 +1,20 @@
 import stl from './LeftSide.module.scss';
 import { Button } from 'react-bootstrap';
-import { useEffect, useRef, useState } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
+import ImageContext from '../context/ImageContext';
 
 const LeftSide = () => {
   const canvasRef = useRef(null);
   const [backgroundImage, setBackgroundImage] = useState(null);
   const fileInputRef = useRef(null);
+  const { selectedSlide1, selectedSlide2 } = useContext(ImageContext);
 
+  if (selectedSlide1) {
+    console.log(selectedSlide1.title);
+  }
+  if (selectedSlide2) {
+    console.log(selectedSlide2.title);
+  }
   useEffect(() => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext('2d');
