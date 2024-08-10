@@ -16,7 +16,7 @@ const SwiperComponent = ({
       <div className={stl.title}>{swiperName}</div>
       <div className={stl.swiper}>
         <Swiper
-          spaceBetween={7}
+          spaceBetween={9}
           slidesPerView={images.length >= 11 ? 11 : images.length}
           navigation
           modules={[Navigation]}

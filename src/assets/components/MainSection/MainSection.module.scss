@@ -6,7 +6,7 @@
 .container{
   display: grid;
   grid-template-columns: 1fr 2fr;
-  grid-column-gap: 152px;
+  grid-column-gap: 92px;
 
   @include media-breakpoint-up(lg) {
     max-width: 1920px;
