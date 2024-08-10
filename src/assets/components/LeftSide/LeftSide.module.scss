@@ -27,12 +27,9 @@
 
 }
 .canvas{
-  width: 356px;
-  height: 360px;
-  background-color: $primary ;
   border-radius: 50px;
+  background: $primary;
   z-index: 1;
-
 }
 .shadow{
   position: absolute;

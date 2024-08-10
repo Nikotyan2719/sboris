@@ -3,11 +3,11 @@ import { createContext } from 'react';
 const ImageContext = createContext({
   images1: [],
   images2: [],
-  selectedSlide1: null,
-  selectedSlide2: null,
-  selectedSlide3: null,
-  selectedSlide4: null,
-  selectedSlide5: null,
+  hatAndMask: null,
+  eyeWear: null,
+  background: null,
+  clothes: null,
+  jewerly: null,
   handleSlideClick: () => {},
 });
 
