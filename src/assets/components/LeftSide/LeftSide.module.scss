@@ -1,4 +1,8 @@
 .root{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: -85px;
 }
 .title {
   h1 {
@@ -37,7 +41,7 @@
   --bs-box-shadow: none
 }
 .btnList{
-  width: 300px;
+  width: 458px;
   margin-top: 50px;
   display: grid;
   justify-content: center;
@@ -51,7 +55,11 @@
   }
 }
 .custom{
-  width: 220px;
+  @include media-breakpoint-up(lg) {
+    width: 220px;
+    height: 44px;
+  }
+
   @include media-breakpoint-down(lg) {
     font-size: 26px;
   }
