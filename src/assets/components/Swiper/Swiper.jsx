@@ -10,14 +10,15 @@ const SwiperComponent = ({
   images,
   handleSlideClick,
   swiperId,
+  removeCurrentItem,
 }) => {
   return (
     <div className={stl.root}>
       <div className={stl.title}>{swiperName}</div>
       <div className={stl.swiper}>
         <Swiper
-          spaceBetween={12}
-          slidesPerView="auto"
+          spaceBetween={11}
+          slidesPerView={'auto'}
           navigation={{
             nextEl: `#${swiperName}-next`,
             prevEl: `#${swiperName}-prev`,
@@ -38,13 +39,26 @@ const SwiperComponent = ({
             },
           }}
         >
+          <SwiperSlide onClick={() => removeCurrentItem(swiperId)}>
+            <div className={stl.slideBox}>
+              <img
+                className={stl.empty}
+                src="./images/logo/empty-set.png"
+                alt="empty"
+              />
+            </div>
+          </SwiperSlide>
           {images.map((image) => (
             <SwiperSlide
               key={image.id}
               onClick={() => handleSlideClick(image, swiperId)}
             >
               <div className={stl.slideBox}>
-                <img src={image.src} alt={image.title} />
+                <img
+                  src={image.src}
+                  alt={image.title}
+                  className={stl.imgInBox}
+                />
               </div>
             </SwiperSlide>
           ))}

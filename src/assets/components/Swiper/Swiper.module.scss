@@ -38,6 +38,7 @@
 }
 
 .slideBox {
+  position: relative;
   border: solid 3px rgb(54,97,213);
   border-radius: 15px;
   transition: transform 0.3s ease-in-out;
@@ -48,6 +49,22 @@
   &:hover {
     transform: scale(1.03);
   }
+  .imgInBox{
+    position: absolute;
+    left: -1px;
+    top: -1px;
+    border-radius: 15px;
+    width: 71px;
+    height: 71px;
+  }
+  .empty{
+    position: absolute;
+    left: 18px;
+    top: 18px;
+    width: 32px;
+    height: 32px;
+  }
+
 }
 
 .customPrev,

@@ -2,6 +2,8 @@ import stl from './LeftSide.module.scss';
 import { Button } from 'react-bootstrap';
 import { useEffect, useRef, useState } from 'react';
 import { Stage, Layer, Image, Text, Transformer, Circle } from 'react-konva';
+import { useContext } from 'react';
+import imageContext from '../context/ImageContext';
 
 const LeftSide = () => {
   const stageRef = useRef(null);
@@ -11,6 +13,7 @@ const LeftSide = () => {
   const fileStickerRef = useRef(null);
   const textRef = useRef(null);
   const transformerRef = useRef(null);
+  //
   const [backgroundImage, setBackgroundImage] = useState(null);
   const [bearImage, setBearImage] = useState(null);
   //
@@ -24,9 +27,28 @@ const LeftSide = () => {
   const [selectedSticker, setSelectedSticker] = useState(null);
   const [stickerScale, setStickerScale] = useState({ scaleX: 1, scaleY: 1 });
   const [isStickerSized, setIsStickerSized] = useState(true);
-
-  //
   const [selectedType, setSelectedType] = useState(null);
+  //
+  const { background } = useContext(imageContext);
+
+  useEffect(() => {
+    if (background === 'del') {
+      setBackgroundImage(null);
+    } else if (background) {
+      setBackgroundImage(background.src);
+    }
+  }, [background]);
+  useEffect(() => {
+    if (backgroundImage) {
+      const img = new window.Image();
+      img.src = backgroundImage;
+      img.onload = () => {
+        imageRef.current.image(img);
+        stageRef.current.batchDraw();
+      };
+    }
+  }, [backgroundImage]);
+
   const handleStickerChange = (event) => {
     console.log('in sticker');
     const file = event.target.files[0];
@@ -44,17 +66,6 @@ const LeftSide = () => {
       setBearImage(img);
     };
   }, []);
-
-  useEffect(() => {
-    if (backgroundImage) {
-      const img = new window.Image();
-      img.src = backgroundImage;
-      img.onload = () => {
-        imageRef.current.image(img);
-        stageRef.current.batchDraw();
-      };
-    }
-  }, [backgroundImage]);
 
   useEffect(() => {
     if (stickerImage) {
@@ -194,6 +205,20 @@ const LeftSide = () => {
               setSelectedType(null);
             }
           }}
+          onTap={(e) => {
+            // Проверяем, что клик не был на самом текстовом компоненте, трансформере или стикере
+            if (
+              e.target.className !== 'Text' &&
+              e.target.className !== 'Transformer' &&
+              e.target !== stickerRef.current
+            ) {
+              setSelectedSticker(null);
+              setIsTextSized(false);
+              setSelectedText(null);
+              setShowDeleteButton(false);
+              setSelectedType(null);
+            }
+          }}
         >
           <Layer>
             {backgroundImage && (
@@ -235,6 +260,7 @@ const LeftSide = () => {
                   });
                 }}
                 onClick={handleStickerClick}
+                onTap={handleStickerClick}
               />
             )}
             {selectedSticker && (
@@ -271,6 +297,7 @@ const LeftSide = () => {
                   });
                 }}
                 onClick={handleTextClick}
+                onTap={handleTextClick}
                 ref={textRef}
               />
             )}
@@ -311,7 +338,8 @@ const LeftSide = () => {
                 stroke="black"
                 strokeWidth={3}
                 fill="red"
-                onClick={handleDelete}
+                onTap={handleDelete}
+                onTouchStart={handleDelete}
                 visible={!isStickerSized || !isTextSized}
               />
               <Text
@@ -334,7 +362,8 @@ const LeftSide = () => {
                 fill="#ffffff"
                 align="center"
                 verticalAlign="middle"
-                onClick={handleDelete}
+                onTap={handleDelete}
+                onTouchStart={handleDelete}
                 visible={!isStickerSized || !isTextSized}
               />
             </Layer>
