@@ -29,6 +29,12 @@ const LeftSide = () => {
   const [isStickerSized, setIsStickerSized] = useState(true);
   const [selectedType, setSelectedType] = useState(null);
   //
+  const [eyeWearCoord, setEyeWearCoord] = useState({ x: 0, y: 0 });
+  const [eyeWearSize, setEyeWearSize] = useState({ width: 0, height: 0 });
+  //
+  const [jewerlyCoord, setJewerlyCoord] = useState({ x: 0, y: 0 });
+  const [jewerlySize, setJewerlySize] = useState({ width: 0, height: 0 });
+  //
   const { background, jewerly, eyeWear, backgrounds, eyeWears, jewerlys } =
     useContext(imageContext);
   const [jewerlyImg, setJewerlyImg] = useState(null);
@@ -41,7 +47,31 @@ const LeftSide = () => {
     const randomJewerlys =
       jewerlys[Math.floor(Math.random() * jewerlys.length)];
 
-    console.log(randomBackground, randomEyewear, randomJewerlys);
+    setBackgroundImage(randomBackground.src);
+
+    setEyeWearImg(null);
+    setEyeWearCoord({ x: randomEyewear.x, y: randomEyewear.y });
+    setEyeWearSize({
+      width: randomEyewear.width,
+      height: randomEyewear.height,
+    });
+    const img = new window.Image();
+    img.src = randomEyewear.src;
+    img.onload = () => {
+      setEyeWearImg(img);
+    };
+
+    setJewerlyImg(null);
+    setJewerlyCoord({ x: randomJewerlys.x, y: randomJewerlys.y });
+    setJewerlySize({
+      width: randomJewerlys.width,
+      height: randomJewerlys.height,
+    });
+    const img2 = new window.Image();
+    img2.src = randomJewerlys.src;
+    img2.onload = () => {
+      setJewerlyImg(img2);
+    };
   };
 
   useEffect(() => {
@@ -50,6 +80,11 @@ const LeftSide = () => {
     } else if (eyeWear) {
       const img = new window.Image();
       img.src = eyeWear.src;
+      setEyeWearCoord({ x: eyeWear.x, y: eyeWear.y });
+      setEyeWearSize({
+        width: eyeWear.width,
+        height: eyeWear.height,
+      });
       img.onload = () => {
         setEyeWearImg(img);
       };
@@ -62,6 +97,11 @@ const LeftSide = () => {
     } else if (jewerly) {
       const img = new window.Image();
       img.src = jewerly.src;
+      setJewerlyCoord({ x: jewerly.x, y: jewerly.y });
+      setJewerlySize({
+        width: jewerly.width,
+        height: jewerly.height,
+      });
       img.onload = () => {
         setJewerlyImg(img);
       };
@@ -176,6 +216,7 @@ const LeftSide = () => {
   };
 
   const handleDelete = () => {
+    console.log('in delete');
     if (selectedText) {
       selectedText.destroy();
       setSelectedText(null);
@@ -217,11 +258,21 @@ const LeftSide = () => {
 
   const handleSaveImage = () => {
     const stage = stageRef.current;
+    const pixelRatio = window.devicePixelRatio || 1; // Получаем коэффициент масштабирования
+
+    // Временно увеличиваем размер канваса
+    stage.width(stage.width() * pixelRatio);
+    stage.height(stage.height() * pixelRatio);
+
     const dataURL = stage.toDataURL({ mimeType: 'image/png', quality: 1 });
+
+    // Возвращаем оригинальный размер канваса
+    stage.width(stage.width() / pixelRatio);
+    stage.height(stage.height() / pixelRatio);
 
     // Создание ссылки для загрузки изображения
     const link = document.createElement('a');
-    link.download = 'image.png';
+    link.download = 'BorisMeme.png';
     link.href = dataURL;
     document.body.appendChild(link);
     link.click();
@@ -291,6 +342,25 @@ const LeftSide = () => {
                 y={57}
                 width={278}
                 height={303}
+              />
+            )}
+
+            {jewerlyImg && (
+              <Image
+                image={jewerlyImg}
+                x={jewerlyCoord.x}
+                y={jewerlyCoord.y}
+                width={jewerlySize.width}
+                height={jewerlySize.height}
+              />
+            )}
+            {eyeWearImg && (
+              <Image
+                image={eyeWearImg}
+                x={eyeWearCoord.x}
+                y={eyeWearCoord.y}
+                width={eyeWearSize.width}
+                height={eyeWearSize.height}
               />
             )}
             {stickerImage && (
@@ -366,24 +436,6 @@ const LeftSide = () => {
                 visible={!isTextSized}
               />
             )}
-            {jewerlyImg && (
-              <Image
-                image={jewerlyImg}
-                x={jewerly.x}
-                y={jewerly.y}
-                width={jewerly.width}
-                height={jewerly.height}
-              />
-            )}
-            {eyeWearImg && (
-              <Image
-                image={eyeWearImg}
-                x={eyeWear.x}
-                y={eyeWear.y}
-                width={eyeWear.width}
-                height={eyeWear.height}
-              />
-            )}
           </Layer>
           {showDeleteButton && (
             <Layer>
@@ -407,8 +459,8 @@ const LeftSide = () => {
                 stroke="black"
                 strokeWidth={3}
                 fill="red"
+                onClick={handleDelete}
                 onTap={handleDelete}
-                onTouchStart={handleDelete}
                 visible={!isStickerSized || !isTextSized}
               />
               <Text
@@ -431,8 +483,8 @@ const LeftSide = () => {
                 fill="#ffffff"
                 align="center"
                 verticalAlign="middle"
+                onClick={handleDelete}
                 onTap={handleDelete}
-                onTouchStart={handleDelete}
                 visible={!isStickerSized || !isTextSized}
               />
             </Layer>

@@ -12,7 +12,7 @@ const Header = () => {
     <header className={styles.root}>
       <Container>
         <div className={styles.headerMenu}>
-          <a href="/some-link" className={styles.headerTitle}>
+          <a href="#" className={styles.headerTitle}>
             <img src="./images/logo/logo.png" alt="" className={styles.logo} />
             <span className={styles.title}>$BORIS</span>
           </a>
