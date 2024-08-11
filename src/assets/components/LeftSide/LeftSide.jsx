@@ -29,8 +29,20 @@ const LeftSide = () => {
   const [isStickerSized, setIsStickerSized] = useState(true);
   const [selectedType, setSelectedType] = useState(null);
   //
-  const { background } = useContext(imageContext);
+  const { background, jewerly } = useContext(imageContext);
+  const [jewerlyImg, setJewerlyImg] = useState(null);
 
+  useEffect(() => {
+    if (jewerly === 'del') {
+      setJewerlyImg(null);
+    } else if (jewerly) {
+      const img = new window.Image();
+      img.src = jewerly.src;
+      img.onload = () => {
+        setJewerlyImg(img);
+      };
+    }
+  }, [jewerly]);
   useEffect(() => {
     if (background === 'del') {
       setBackgroundImage(null);
@@ -38,6 +50,7 @@ const LeftSide = () => {
       setBackgroundImage(background.src);
     }
   }, [background]);
+
   useEffect(() => {
     if (backgroundImage) {
       const img = new window.Image();
@@ -313,6 +326,16 @@ const LeftSide = () => {
                 }}
                 onTransformEnd={handleTransformEnd}
                 visible={!isTextSized}
+              />
+            )}
+            {jewerlyImg && (
+              <Image
+                image={jewerlyImg}
+                x={jewerly.x}
+                y={jewerly.y}
+                width={jewerly.width}
+                height={jewerly.height}
+                rotation={jewerly.rotation}
               />
             )}
           </Layer>

@@ -73,9 +73,59 @@ const MainSection = () => {
       id: 1,
       src: './images/jewerly/jewerly1.png',
       title: 'Image 1',
+      x: 187,
+      y: 215,
+      width: 83,
+      height: 60,
+      rotation: 0,
     },
     {
       id: 2,
+      src: './images/jewerly/jewerly2.png',
+      title: 'Image 2',
+      x: 175,
+      y: 185,
+      width: 107,
+      height: 89,
+      rotation: 0,
+    },
+    {
+      id: 3,
+      src: './images/jewerly/jewerly1.png',
+      title: 'Image 1',
+    },
+    {
+      id: 4,
+      src: './images/jewerly/jewerly2.png',
+      title: 'Image 2',
+    },
+    {
+      id: 5,
+      src: './images/jewerly/jewerly1.png',
+      title: 'Image 1',
+    },
+    {
+      id: 6,
+      src: './images/jewerly/jewerly2.png',
+      title: 'Image 2',
+    },
+    {
+      id: 7,
+      src: './images/jewerly/jewerly1.png',
+      title: 'Image 1',
+    },
+    {
+      id: 8,
+      src: './images/jewerly/jewerly2.png',
+      title: 'Image 2',
+    },
+    {
+      id: 9,
+      src: './images/jewerly/jewerly1.png',
+      title: 'Image 1',
+    },
+    {
+      id: 10,
       src: './images/jewerly/jewerly2.png',
       title: 'Image 2',
     },
@@ -159,7 +209,7 @@ const MainSection = () => {
         setClothes(image);
         break;
       case 5:
-        console.log(`Clicked on slide Jewerly: ${image.title}`);
+        console.log(`Clicked on slide Jewerly: ${image.src}`);
         setJewerly(image);
         break;
       default:
@@ -170,11 +220,11 @@ const MainSection = () => {
     switch (swiperId) {
       case 1:
         console.log(`Clicked on delete HatAndMask`);
-        setHatAndMask(null);
+        setHatAndMask('del');
         break;
       case 2:
         console.log(`Clicked on delete EyeWear`);
-        setEyeWear(null);
+        setEyeWear('del');
         break;
       case 3:
         console.log(`Clicked on delete Background`);
@@ -182,11 +232,11 @@ const MainSection = () => {
         break;
       case 4:
         console.log(`Clicked on delete Clothes`);
-        setClothes(null);
+        setClothes('del');
         break;
       case 5:
         console.log(`Clicked on delete Jewerly`);
-        setJewerly(null);
+        setJewerly('del');
         break;
       default:
         break;
