@@ -29,9 +29,20 @@ const LeftSide = () => {
   const [isStickerSized, setIsStickerSized] = useState(true);
   const [selectedType, setSelectedType] = useState(null);
   //
-  const { background, jewerly, eyeWear } = useContext(imageContext);
+  const { background, jewerly, eyeWear, backgrounds, eyeWears, jewerlys } =
+    useContext(imageContext);
   const [jewerlyImg, setJewerlyImg] = useState(null);
   const [eyeWearImg, setEyeWearImg] = useState(null);
+
+  const generateRandomElements = () => {
+    const randomBackground =
+      backgrounds[Math.floor(Math.random() * backgrounds.length)];
+    const randomEyewear = eyeWears[Math.floor(Math.random() * eyeWears.length)];
+    const randomJewerlys =
+      jewerlys[Math.floor(Math.random() * jewerlys.length)];
+
+    console.log(randomBackground, randomEyewear, randomJewerlys);
+  };
 
   useEffect(() => {
     if (eyeWear === 'del') {
@@ -199,6 +210,22 @@ const LeftSide = () => {
     setSelectedSticker(null);
     setStickerScale({ scaleX: 1, scaleY: 1, rotation: 0 });
     setIsStickerSized(false);
+    //
+    setEyeWearImg(null);
+    setJewerlyImg(null);
+  };
+
+  const handleSaveImage = () => {
+    const stage = stageRef.current;
+    const dataURL = stage.toDataURL({ mimeType: 'image/png', quality: 1 });
+
+    // Создание ссылки для загрузки изображения
+    const link = document.createElement('a');
+    link.download = 'image.png';
+    link.href = dataURL;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (
@@ -212,7 +239,6 @@ const LeftSide = () => {
       </div>
       <div className={stl.canvasBlock}>
         <Stage
-          cornerRadius={50}
           ref={stageRef}
           className={stl.canvas}
           width={356}
@@ -255,7 +281,6 @@ const LeftSide = () => {
                 y={0}
                 width={356}
                 height={360}
-                cornerRadius={50}
               />
             )}
             {bearImage && (
@@ -443,8 +468,12 @@ const LeftSide = () => {
         <Button className={stl.custom} onClick={handleReset}>
           RESET
         </Button>
-        <Button className={stl.custom}>GENERATE RANDOM</Button>
-        <Button className={stl.custom}>SAVE MEME</Button>
+        <Button className={stl.custom} onClick={generateRandomElements}>
+          GENERATE RANDOM
+        </Button>
+        <Button className={stl.custom} onClick={handleSaveImage}>
+          SAVE MEME
+        </Button>
       </div>
     </div>
   );

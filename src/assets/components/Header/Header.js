@@ -12,13 +12,19 @@ const Header = () => {
     <header className={styles.root}>
       <Container>
         <div className={styles.headerMenu}>
-          <div className={styles.headerTitle}>
+          <a href="/some-link" className={styles.headerTitle}>
             <img src="./images/logo/logo.png" alt="" className={styles.logo} />
             <span className={styles.title}>$BORIS</span>
-          </div>
+          </a>
           <div className={styles.headerNav}>
-            <a className={styles.title}>MEME GENERATOR</a>
-            <a className={`${styles.title} text-decoration-none`}>WEBSITE</a>
+            <a className={`${styles.title}`}>MEME GENERATOR</a>
+
+            <a
+              href="https://borisbear.space"
+              className={`${styles.title}  ${styles.smallHover} `}
+            >
+              WEBSITE
+            </a>
           </div>
           <div className={styles.links}>
             <Links
