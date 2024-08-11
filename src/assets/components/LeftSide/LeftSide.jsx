@@ -13,33 +13,34 @@ const LeftSide = () => {
   const fileStickerRef = useRef(null);
   const textRef = useRef(null);
   const transformerRef = useRef(null);
-  //
+  //Изначальный рендер + бг
   const [backgroundImage, setBackgroundImage] = useState(null);
   const [bearImage, setBearImage] = useState(null);
-  //
+  //Текст
   const [text, setText] = useState({ value: '', x: 0, y: 0 });
   const [selectedText, setSelectedText] = useState(null);
   const [textScale, setTextScale] = useState({ scaleX: 1, scaleY: 1 });
   const [isTextSized, setIsTextSized] = useState(false);
   const [showDeleteButton, setShowDeleteButton] = useState(false);
-  //
+  //Стикер
   const [stickerImage, setStickerImage] = useState(null);
   const [selectedSticker, setSelectedSticker] = useState(null);
   const [stickerScale, setStickerScale] = useState({ scaleX: 1, scaleY: 1 });
   const [isStickerSized, setIsStickerSized] = useState(true);
   const [selectedType, setSelectedType] = useState(null);
-  //
+  //Очки
+  const [eyeWearImg, setEyeWearImg] = useState(null);
   const [eyeWearCoord, setEyeWearCoord] = useState({ x: 0, y: 0 });
   const [eyeWearSize, setEyeWearSize] = useState({ width: 0, height: 0 });
-  //
+  //Цепи
+  const [jewerlyImg, setJewerlyImg] = useState(null);
   const [jewerlyCoord, setJewerlyCoord] = useState({ x: 0, y: 0 });
   const [jewerlySize, setJewerlySize] = useState({ width: 0, height: 0 });
-  //
+  //Контекст
   const { background, jewerly, eyeWear, backgrounds, eyeWears, jewerlys } =
     useContext(imageContext);
-  const [jewerlyImg, setJewerlyImg] = useState(null);
-  const [eyeWearImg, setEyeWearImg] = useState(null);
 
+  //Рандомная генерация
   const generateRandomElements = () => {
     const randomBackground =
       backgrounds[Math.floor(Math.random() * backgrounds.length)];
@@ -74,6 +75,7 @@ const LeftSide = () => {
     };
   };
 
+  //Юзэффект для каждого элемента
   useEffect(() => {
     if (eyeWear === 'del') {
       setEyeWearImg(null);
@@ -215,6 +217,7 @@ const LeftSide = () => {
     setSelectedText(null);
   };
 
+  //Удаление стикера или текста
   const handleDelete = () => {
     console.log('in delete');
     if (selectedText) {
@@ -235,6 +238,7 @@ const LeftSide = () => {
     }
   };
 
+  //Очистка полотна
   const handleReset = () => {
     // Сбросить состояния
     fileInputRef.current.value = '';
@@ -256,6 +260,7 @@ const LeftSide = () => {
     setJewerlyImg(null);
   };
 
+  //Сохранение
   const handleSaveImage = () => {
     const stage = stageRef.current;
     const pixelRatio = window.devicePixelRatio || 1; // Получаем коэффициент масштабирования
