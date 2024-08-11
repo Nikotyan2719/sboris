@@ -340,7 +340,10 @@ const LeftSide = () => {
             </Layer>
           )}
         </Stage>
-        <img src="/Images/logo/shadow-picture.png" className={stl.shadow}></img>
+        <img
+          src="./images/logo/shadow-picture.png"
+          className={stl.shadow}
+        ></img>
       </div>
       <div className={stl.btnList}>
         <Button className={stl.custom} onClick={handleStickerUpload}>
