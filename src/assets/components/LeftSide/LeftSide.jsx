@@ -29,8 +29,21 @@ const LeftSide = () => {
   const [isStickerSized, setIsStickerSized] = useState(true);
   const [selectedType, setSelectedType] = useState(null);
   //
-  const { background, jewerly } = useContext(imageContext);
+  const { background, jewerly, eyeWear } = useContext(imageContext);
   const [jewerlyImg, setJewerlyImg] = useState(null);
+  const [eyeWearImg, setEyeWearImg] = useState(null);
+
+  useEffect(() => {
+    if (eyeWear === 'del') {
+      setEyeWearImg(null);
+    } else if (eyeWear) {
+      const img = new window.Image();
+      img.src = eyeWear.src;
+      img.onload = () => {
+        setEyeWearImg(img);
+      };
+    }
+  }, [eyeWear]);
 
   useEffect(() => {
     if (jewerly === 'del') {
@@ -335,7 +348,15 @@ const LeftSide = () => {
                 y={jewerly.y}
                 width={jewerly.width}
                 height={jewerly.height}
-                rotation={jewerly.rotation}
+              />
+            )}
+            {eyeWearImg && (
+              <Image
+                image={eyeWearImg}
+                x={eyeWear.x}
+                y={eyeWear.y}
+                width={eyeWear.width}
+                height={eyeWear.height}
               />
             )}
           </Layer>

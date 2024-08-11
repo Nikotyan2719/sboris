@@ -4,6 +4,7 @@ const ImageContext = createContext({
   backgrounds: [],
   images2: [],
   jewerlys: [],
+  eyeWears: [],
   hatAndMask: null,
   eyeWear: null,
   background: null,

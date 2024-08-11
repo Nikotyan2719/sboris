@@ -77,7 +77,6 @@ const MainSection = () => {
       y: 215,
       width: 83,
       height: 60,
-      rotation: 0,
     },
     {
       id: 2,
@@ -87,7 +86,6 @@ const MainSection = () => {
       y: 185,
       width: 107,
       height: 89,
-      rotation: 0,
     },
     {
       id: 3,
@@ -128,6 +126,119 @@ const MainSection = () => {
       id: 10,
       src: './images/jewerly/jewerly2.png',
       title: 'Image 2',
+    },
+  ];
+
+  const eyeWears = [
+    {
+      id: 1,
+      src: './images/eyewear/eyewear1.png',
+      title: 'Image 1',
+      x: 170,
+      y: 106,
+      width: 124,
+      height: 41,
+    },
+    {
+      id: 2,
+      src: './images/eyewear/eyewear2.png',
+      title: 'Image 2',
+      x: 139,
+      y: 96,
+      width: 78,
+      height: 41,
+    },
+    {
+      id: 3,
+      src: './images/eyewear/eyewear3.png',
+      title: 'Image 3',
+      x: 161,
+      y: 80,
+      width: 143,
+      height: 73,
+    },
+    {
+      id: 4,
+      src: './images/eyewear/eyewear4.png',
+      title: 'Image 1',
+      x: 170,
+      y: 109,
+      width: 122,
+      height: 41,
+    },
+    {
+      id: 5,
+      src: './images/eyewear/eyewear5.png',
+      title: 'Image 2',
+      x: 169,
+      y: 103,
+      width: 123,
+      height: 49,
+    },
+    {
+      id: 6,
+      src: './images/eyewear/eyewear6.png',
+      title: 'Image 3',
+      x: 148,
+      y: 94,
+      width: 165,
+      height: 63,
+    },
+    {
+      id: 7,
+      src: './images/eyewear/eyewear7.png',
+      title: 'Image 1',
+      x: 179,
+      y: 103,
+      width: 106,
+      height: 42,
+      rotation: 0,
+    },
+    {
+      id: 8,
+      src: './images/eyewear/eyewear8.png',
+      title: 'Image 2',
+      x: 151,
+      y: 86,
+      width: 151,
+      height: 67,
+      rotation: 0,
+    },
+    {
+      id: 9,
+      src: './images/eyewear/eyewear9.png',
+      title: 'Image 3',
+      x: 126,
+      y: 27,
+      width: 187,
+      height: 211,
+    },
+    {
+      id: 10,
+      src: './images/eyewear/eyewear10.png',
+      title: 'Image 1',
+      x: 156,
+      y: 98,
+      width: 150,
+      height: 54,
+    },
+    {
+      id: 11,
+      src: './images/eyewear/eyewear11.png',
+      title: 'Image 2',
+      x: 130,
+      y: 82,
+      width: 203,
+      height: 86,
+    },
+    {
+      id: 12,
+      src: './images/eyewear/eyewear12.png',
+      title: 'Image 2',
+      x: 171,
+      y: 100,
+      width: 124,
+      height: 53,
     },
   ];
 
@@ -193,11 +304,11 @@ const MainSection = () => {
     console.log(swiperId);
     switch (swiperId) {
       case 1:
-        console.log(`Clicked on slide HatAndMask: ${image.title}`);
+        console.log(`Clicked on slide HatAndMask: ${image.src}`);
         setHatAndMask(image);
         break;
       case 2:
-        console.log(`Clicked on slide EyeWear: ${image.title}`);
+        console.log(`Clicked on slide EyeWear: ${image.src}`);
         setEyeWear(image);
         break;
       case 3:
@@ -205,7 +316,7 @@ const MainSection = () => {
         setBackground(image);
         break;
       case 4:
-        console.log(`Clicked on slide Clothes: ${image.title}`);
+        console.log(`Clicked on slide Clothes: ${image.src}`);
         setClothes(image);
         break;
       case 5:
@@ -250,6 +361,7 @@ const MainSection = () => {
             backgrounds,
             images2,
             jewerlys,
+            eyeWears,
             hatAndMask,
             eyeWear,
             background,
