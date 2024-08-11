@@ -7,7 +7,7 @@ const IconCube = () => {
       className="header__logo"
       style={{ height: '23px', width: '25px' }}
     >
-      <g stroke-linejoin="bevel" stroke-width="2">
+      <g strokeLinejoin="bevel" strokeWidth="2">
         <path
           fill="#CC7400"
           stroke="#CC7400"

@@ -13,7 +13,7 @@ const Header = () => {
       <Container>
         <div className={styles.headerMenu}>
           <div className={styles.headerTitle}>
-            <img src="/images/logo/logo.png" alt="" className={styles.logo} />
+            <img src="./images/logo/logo.png" alt="" className={styles.logo} />
             <span className={styles.title}>$BORIS</span>
           </div>
           <div className={styles.headerNav}>

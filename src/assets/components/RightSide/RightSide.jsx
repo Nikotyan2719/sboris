@@ -6,7 +6,7 @@ import { useContext } from 'react';
 const RightSide = () => {
   const { images1, images2, handleSlideClick } = useContext(ImageContext);
   const imageGroups = [
-    { id: 1, images: images1, swiperName: 'HAT&MASK' },
+    { id: 1, images: images1, swiperName: 'HAT-MASK' },
     { id: 2, images: images2, swiperName: 'EYEWEAR' },
     { id: 3, images: images1, swiperName: 'BACKGROUND' },
     { id: 4, images: images2, swiperName: 'CLOTHES' },

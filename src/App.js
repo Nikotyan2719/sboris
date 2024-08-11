@@ -1,8 +1,7 @@
 import Header from './assets/components/Header/Header';
-
-import './index.scss';
 import MainSection from './assets/components/MainSection/MainSection';
 import Footer from './assets/components/Footer/Footer';
+import './index.scss';
 
 function App() {
   return (

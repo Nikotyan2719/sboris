@@ -13,114 +13,129 @@ const MainSection = () => {
   const images1 = [
     {
       id: 1,
-      src: '/images/logo/logo.png',
+      src: './images/logo/logo.png',
       title: 'Image 1',
     },
     {
       id: 2,
-      src: '/images/logo/logo.png',
+      src: './images/logo/logo.png',
       title: 'Image 2',
     },
     {
       id: 3,
-      src: '/images/logo/logo.png',
+      src: './images/logo/logo.png',
       title: 'Image 3',
     },
     {
       id: 4,
-      src: '/images/logo/logo.png',
+      src: './images/logo/logo.png',
       title: 'Image 1',
     },
     {
       id: 5,
-      src: '/images/logo/logo.png',
+      src: './images/logo/logo.png',
       title: 'Image 2',
     },
     {
       id: 6,
-      src: '/images/logo/logo.png',
+      src: './images/logo/logo.png',
       title: 'Image 3',
     },
     {
       id: 7,
-      src: '/images/logo/next.png',
+      src: './images/logo/next.png',
       title: 'Image 1',
     },
     {
       id: 8,
-      src: '/images/logo/next.png',
+      src: './images/logo/next.png',
       title: 'Image 2',
     },
     {
       id: 9,
-      src: '/images/logo/next.png',
+      src: './images/logo/next.png',
       title: 'Image 3',
     },
     {
       id: 10,
-      src: '/images/logo/next.png',
+      src: './images/logo/next.png',
       title: 'Image 1',
     },
     {
       id: 11,
-      src: '/images/logo/next.png',
+      src: './images/logo/next.png',
+      title: 'Image 2',
+    },
+    {
+      id: 12,
+      src: './images/logo/next.png',
+      title: 'Image 3',
+    },
+    {
+      id: 13,
+      src: './images/logo/next.png',
+      title: 'Image 1',
+    },
+    {
+      id: 14,
+      src: './images/logo/next.png',
       title: 'Image 2',
     },
   ];
   const images2 = [
     {
       id: 1,
-      src: '/images/logo/next.png',
+      src: './images/logo/next.png',
       title: 'Image 1',
     },
     {
       id: 2,
-      src: '/images/logo/next.png',
+      src: './images/logo/next.png',
       title: 'Image 2',
     },
     {
       id: 3,
-      src: '/images/logo/next.png',
+      src: './images/logo/next.png',
       title: 'Image 3',
     },
     {
       id: 4,
-      src: '/images/logo/next.png',
+      src: './images/logo/next.png',
       title: 'Image 1',
     },
     {
       id: 5,
-      src: '/images/logo/next.png',
+      src: './images/logo/next.png',
       title: 'Image 2',
     },
     {
       id: 6,
-      src: '/images/logo/next.png',
+      src: './images/logo/next.png',
       title: 'Image 3',
     },
     {
       id: 7,
-      src: '/images/logo/next.png',
+      src: './images/logo/next.png',
       title: 'Image 1',
     },
     {
       id: 8,
-      src: '/images/logo/next.png',
+      src: './images/logo/next.png',
       title: 'Image 2',
     },
     {
       id: 9,
-      src: '/images/logo/next.png',
+      src: './images/logo/next.png',
       title: 'Image 3',
     },
     {
       id: 10,
-      src: '/images/logo/next.png',
+      src: './images/logo/next.png',
       title: 'Image 1',
     },
     {
       id: 11,
-      src: '/images/logo/next.png',
+      src: './images/logo/next.png',
       title: 'Image 2',
     },
   ];

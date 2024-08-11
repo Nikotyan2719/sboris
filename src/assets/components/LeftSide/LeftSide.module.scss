@@ -1,9 +1,9 @@
-.root{
+.root {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-right: -75px;
 }
+
 .title {
   h1 {
     color: white;
@@ -18,40 +18,40 @@
     }
   }
 }
-.canvasBlock{
+
+.canvasBlock {
   position: relative;
   margin-top: 60px;
   display: flex;
   flex-direction: column;
   align-items: center;
-
 }
-.canvas{
+
+.canvas {
   border-radius: 50px;
   background: $primary;
   z-index: 1;
 }
-.shadow{
+
+.shadow {
   position: absolute;
   bottom: -20px;
   box-shadow: none;
   --bs-box-shadow: none
 }
-.btnList{
-  width: 458px;
-  margin-top: 50px;
-  display: grid;
-  justify-content: center;
-  grid-template-columns: repeat(2, 1fr);
-  grid-column-gap: 18px;
-  grid-row-gap: 24px;
 
-  @include media-breakpoint-down(lg) {
-    grid-template-columns: 1fr;
-    grid-row-gap: 15px;
-  }
+.btnList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: 18px;
+  row-gap: 24px;
+
+  max-width: 458px;
+  margin-top: 50px;
 }
-.custom{
+
+.custom {
   @include media-breakpoint-up(lg) {
     width: 220px;
     height: 44px;
@@ -60,7 +60,6 @@
   @include media-breakpoint-down(lg) {
     font-size: 26px;
   }
-
 }
 
 

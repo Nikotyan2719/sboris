@@ -1,12 +1,12 @@
 .btn {
   border-radius: 0;
   font-family: $font-family-secondary;
-  color: white;
+  color: $white;
   border-bottom: solid 3px rgb(111,14,14);
-  background-color: rgb(216,28,28);
+  background-color: $primary;
 
   &:hover {
-    background: none !important;
-    color: $white !important;
+    background: none;
+    color: $white;
   }
 }

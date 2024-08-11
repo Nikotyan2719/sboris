@@ -1,18 +1,17 @@
-.root{
-  padding-top:90px;
+.root {
+  padding-top: 90px;
 }
 
 
-.container{
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  grid-column-gap: 92px;
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
 
-  @include media-breakpoint-up(lg) {
-    max-width: 1920px;
-  }
-  @include media-breakpoint-down(lg) {
-    display: flex;
-    flex-direction: column;
+  @include media-breakpoint-up(xxl) {
+    flex-direction: row;
+
+    max-width: 1690px !important;
   }
 }

@@ -36,7 +36,7 @@ const LeftSide = () => {
   useEffect(() => {
     // Загрузка изображения медведя при первом рендере
     const img = new window.Image();
-    img.src = '/Images/logo/bearPicture.png'; // Замените на путь к вашему изображению медведя
+    img.src = './images/logo/bearPicture.png'; // Замените на путь к вашему изображению медведя
     img.onload = () => {
       setBearImage(img);
     };

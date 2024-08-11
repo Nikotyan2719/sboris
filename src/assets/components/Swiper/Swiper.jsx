@@ -3,7 +3,7 @@ import { Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import stl from './Swiper.module.scss';
-import '../../styles/custom/SwiperCustom.css';
+import '../../styles/custom/SwiperCustom.scss';
 
 const SwiperComponent = ({
   swiperName,
@@ -16,10 +16,27 @@ const SwiperComponent = ({
       <div className={stl.title}>{swiperName}</div>
       <div className={stl.swiper}>
         <Swiper
-          spaceBetween={9}
-          slidesPerView={images.length >= 11 ? 11 : images.length}
-          navigation
+          spaceBetween={12}
+          slidesPerView="auto"
+          navigation={{
+            nextEl: `#${swiperName}-next`,
+            prevEl: `#${swiperName}-prev`,
+          }}
           modules={[Navigation]}
+          breakpoints={{
+            576: {
+              slidesPerView: 5,
+            },
+            768: {
+              slidesPerView: 7,
+            },
+            990: {
+              slidesPerView: 10,
+            },
+            1200: {
+              slidesPerView: 11,
+            },
+          }}
         >
           {images.map((image) => (
             <SwiperSlide
@@ -33,6 +50,14 @@ const SwiperComponent = ({
           ))}
         </Swiper>
       </div>
+      <div
+        className={`swiper-button-prev ${stl.customPrev}`}
+        id={swiperName + '-prev'}
+      ></div>
+      <div
+        className={`swiper-button-next ${stl.customNext}`}
+        id={swiperName + '-next'}
+      ></div>
     </div>
   );
 };

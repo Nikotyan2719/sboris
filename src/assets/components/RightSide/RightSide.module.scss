@@ -1,12 +1,18 @@
-.root{
+.root {
   text-align: center;
   margin-top: 40px;
-  max-width: 1080px;
+  max-width: 100%;
+
+  @include media-breakpoint-up(xxl) {
+    max-width: 1040px;
+  }
 }
-.sliders{
+
+.sliders {
   margin-top: 65px;
 }
-.title{
+
+.title {
   font-size: 36px;
   color: white;
 }
