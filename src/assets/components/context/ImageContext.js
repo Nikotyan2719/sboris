@@ -1,6 +1,7 @@
 import { createContext } from 'react';
 
 const ImageContext = createContext({
+  hatsAndMasks: [],
   backgrounds: [],
   images2: [],
   jewerlys: [],

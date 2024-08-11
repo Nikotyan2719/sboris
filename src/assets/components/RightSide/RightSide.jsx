@@ -5,6 +5,7 @@ import { useContext } from 'react';
 
 const RightSide = () => {
   const {
+    hatsAndMasks,
     backgrounds,
     images2,
     jewerlys,
@@ -13,7 +14,7 @@ const RightSide = () => {
     removeCurrentItem,
   } = useContext(ImageContext);
   const imageGroups = [
-    { id: 1, images: images2, swiperName: 'HAT-MASK' },
+    { id: 1, images: hatsAndMasks, swiperName: 'HAT-MASK' },
     { id: 2, images: eyeWears, swiperName: 'EYEWEAR' },
     { id: 3, images: backgrounds, swiperName: 'BACKGROUND' },
     { id: 4, images: images2, swiperName: 'CLOTHES' },

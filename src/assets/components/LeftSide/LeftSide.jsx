@@ -36,46 +36,41 @@ const LeftSide = () => {
   const [jewerlyImg, setJewerlyImg] = useState(null);
   const [jewerlyCoord, setJewerlyCoord] = useState({ x: 0, y: 0 });
   const [jewerlySize, setJewerlySize] = useState({ width: 0, height: 0 });
+  //Шляпы и маски
+  const [hatAndMaskImg, setHatAndMaskImg] = useState(null);
+  const [hatAndMaskCoord, setHatAndMaskCoord] = useState({ x: 0, y: 0 });
+  const [hatAndMaskSize, setHatAndMaskSize] = useState({ width: 0, height: 0 });
+
   //Контекст
-  const { background, jewerly, eyeWear, backgrounds, eyeWears, jewerlys } =
-    useContext(imageContext);
-
-  //Рандомная генерация
-  const generateRandomElements = () => {
-    const randomBackground =
-      backgrounds[Math.floor(Math.random() * backgrounds.length)];
-    const randomEyewear = eyeWears[Math.floor(Math.random() * eyeWears.length)];
-    const randomJewerlys =
-      jewerlys[Math.floor(Math.random() * jewerlys.length)];
-
-    setBackgroundImage(randomBackground.src);
-
-    setEyeWearImg(null);
-    setEyeWearCoord({ x: randomEyewear.x, y: randomEyewear.y });
-    setEyeWearSize({
-      width: randomEyewear.width,
-      height: randomEyewear.height,
-    });
-    const img = new window.Image();
-    img.src = randomEyewear.src;
-    img.onload = () => {
-      setEyeWearImg(img);
-    };
-
-    setJewerlyImg(null);
-    setJewerlyCoord({ x: randomJewerlys.x, y: randomJewerlys.y });
-    setJewerlySize({
-      width: randomJewerlys.width,
-      height: randomJewerlys.height,
-    });
-    const img2 = new window.Image();
-    img2.src = randomJewerlys.src;
-    img2.onload = () => {
-      setJewerlyImg(img2);
-    };
-  };
+  const {
+    hatAndMask,
+    background,
+    jewerly,
+    eyeWear,
+    hatsAndMasks,
+    backgrounds,
+    eyeWears,
+    jewerlys,
+  } = useContext(imageContext);
 
   //Юзэффект для каждого элемента
+  useEffect(() => {
+    if (hatAndMask === 'del') {
+      setHatAndMaskImg(null);
+    } else if (hatAndMask) {
+      const img = new window.Image();
+      img.src = hatAndMask.src;
+      setHatAndMaskCoord({ x: hatAndMask.x, y: hatAndMask.y });
+      setHatAndMaskSize({
+        width: hatAndMask.width,
+        height: hatAndMask.height,
+      });
+      img.onload = () => {
+        setHatAndMaskImg(img);
+      };
+    }
+  }, [hatAndMask]);
+
   useEffect(() => {
     if (eyeWear === 'del') {
       setEyeWearImg(null);
@@ -238,6 +233,54 @@ const LeftSide = () => {
     }
   };
 
+  //Рандомная генерация
+  const generateRandomElements = () => {
+    const randomBackground =
+      backgrounds[Math.floor(Math.random() * backgrounds.length)];
+    const randomEyewear = eyeWears[Math.floor(Math.random() * eyeWears.length)];
+    const randomJewerlys =
+      jewerlys[Math.floor(Math.random() * jewerlys.length)];
+    const randomHatAndMask =
+      hatsAndMasks[Math.floor(Math.random() * hatsAndMasks.length)];
+
+    setBackgroundImage(randomBackground.src);
+
+    setEyeWearImg(null);
+    setEyeWearCoord({ x: randomEyewear.x, y: randomEyewear.y });
+    setEyeWearSize({
+      width: randomEyewear.width,
+      height: randomEyewear.height,
+    });
+    const img = new window.Image();
+    img.src = randomEyewear.src;
+    img.onload = () => {
+      setEyeWearImg(img);
+    };
+
+    setJewerlyImg(null);
+    setJewerlyCoord({ x: randomJewerlys.x, y: randomJewerlys.y });
+    setJewerlySize({
+      width: randomJewerlys.width,
+      height: randomJewerlys.height,
+    });
+    const img2 = new window.Image();
+    img2.src = randomJewerlys.src;
+    img2.onload = () => {
+      setJewerlyImg(img2);
+    };
+
+    setHatAndMaskImg(null);
+    setHatAndMaskCoord({ x: randomHatAndMask.x, y: randomHatAndMask.y });
+    setHatAndMaskSize({
+      width: randomHatAndMask.width,
+      height: randomHatAndMask.height,
+    });
+    const img3 = new window.Image();
+    img3.src = randomHatAndMask.src;
+    img3.onload = () => {
+      setHatAndMaskImg(img3);
+    };
+  };
   //Очистка полотна
   const handleReset = () => {
     // Сбросить состояния
@@ -258,6 +301,7 @@ const LeftSide = () => {
     //
     setEyeWearImg(null);
     setJewerlyImg(null);
+    setHatAndMaskImg(null);
   };
 
   //Сохранение
@@ -349,7 +393,15 @@ const LeftSide = () => {
                 height={303}
               />
             )}
-
+            {hatAndMaskImg && (
+              <Image
+                image={hatAndMaskImg}
+                x={hatAndMaskCoord.x}
+                y={hatAndMaskCoord.y}
+                width={hatAndMaskSize.width}
+                height={hatAndMaskSize.height}
+              />
+            )}
             {jewerlyImg && (
               <Image
                 image={jewerlyImg}
