@@ -19,7 +19,9 @@
   }
 }
 
-.canvasBlock {
+.canvasBlock{
+  border-radius: 50px;
+  overflow: hidden;
   position: relative;
   margin-top: 60px;
   display: flex;
@@ -28,7 +30,6 @@
 }
 
 .canvas {
-  border-radius: 50px;
   background: $primary;
   z-index: 1;
 }
@@ -60,6 +61,7 @@
   @include media-breakpoint-down(lg) {
     font-size: 26px;
   }
+
 }
 
 
