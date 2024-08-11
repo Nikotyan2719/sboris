@@ -38,6 +38,7 @@ const SwiperComponent = ({
               slidesPerView: 11,
             },
           }}
+          className={swiperName === 'BACKGROUND' ? stl.bgSwiper : ''}
         >
           <SwiperSlide onClick={() => removeCurrentItem(swiperId)}>
             <div className={stl.slideBox}>
