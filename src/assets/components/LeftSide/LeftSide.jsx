@@ -351,7 +351,7 @@ const LeftSide = () => {
     if (stageRef.current) {
       const stage = stageRef.current.getStage();
       const dataUrl = stage.toDataURL({
-        pixelRatio: 2,
+        pixelRatio: 3,
         mimeType: 'image/png',
         quality: 2.0,
       });

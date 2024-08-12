@@ -42,10 +42,10 @@
   box-shadow: none;
   --bs-box-shadow: none;
 
-  @include media-breakpoint-up(sm) { display: block }
+  @include media-breakpoint-up(sm) { display: inline-block }
 
   @include media-breakpoint-up(xxl) {
-    top: 52.5%;
+    top: 51%;
   }
 }
 
