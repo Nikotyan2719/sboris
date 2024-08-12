@@ -444,16 +444,7 @@ const LeftSide = () => {
                 crossOrigin="Anonymous"
               />
             )}
-            {jewerlyImg && (
-              <Image
-                image={jewerlyImg}
-                x={jewerlyCoord.x}
-                y={jewerlyCoord.y}
-                width={jewerlySize.width}
-                height={jewerlySize.height}
-                crossOrigin="Anonymous"
-              />
-            )}
+
             {clothesImg && (
               <Image
                 image={clothesImg}
@@ -461,6 +452,16 @@ const LeftSide = () => {
                 y={clothesCoord.y}
                 width={clothesSize.width}
                 height={clothesSize.height}
+                crossOrigin="Anonymous"
+              />
+            )}
+            {jewerlyImg && (
+              <Image
+                image={jewerlyImg}
+                x={jewerlyCoord.x}
+                y={jewerlyCoord.y}
+                width={jewerlySize.width}
+                height={jewerlySize.height}
                 crossOrigin="Anonymous"
               />
             )}
