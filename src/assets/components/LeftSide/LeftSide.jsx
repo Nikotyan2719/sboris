@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Stage, Layer, Image, Text, Transformer, Circle } from 'react-konva';
 import { useContext } from 'react';
 import imageContext from '../context/ImageContext';
+import * as FileSaver from 'file-saver';
 
 const LeftSide = () => {
   const stageRef = useRef(null);
@@ -344,24 +345,24 @@ const LeftSide = () => {
   };
 
   //Сохранение
-
-  const handleSaveImage = () => {
+  const handleSaveImage = (event) => {
+    event.preventDefault();
+    event.stopPropagation();
     if (stageRef.current) {
       const stage = stageRef.current.getStage();
-
       const dataUrl = stage.toDataURL({
-        pixelRatio: 5,
+        pixelRatio: 2,
         mimeType: 'image/png',
-        quality: 1.0,
+        quality: 2.0,
       });
 
-      const link = document.createElement('a');
-      link.download = 'BorisMeme.png';
-      link.href = dataUrl;
-
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
+      // Создаем ссылку с Data URI
+      fetch(dataUrl)
+        .then((res) => res.blob())
+        .then((blob) => {
+          // Используем file-saver для скачивания файла
+          FileSaver.saveAs(blob, 'BorisMeme.png');
+        });
     }
   };
 
@@ -418,6 +419,7 @@ const LeftSide = () => {
                 y={0}
                 width={356}
                 height={360}
+                crossOrigin="Anonymous"
               />
             )}
             {bearImage && (
@@ -428,6 +430,7 @@ const LeftSide = () => {
                 y={57}
                 width={278}
                 height={303}
+                crossOrigin="Anonymous"
               />
             )}
 
@@ -438,6 +441,7 @@ const LeftSide = () => {
                 y={hatAndMaskCoord.y}
                 width={hatAndMaskSize.width}
                 height={hatAndMaskSize.height}
+                crossOrigin="Anonymous"
               />
             )}
             {jewerlyImg && (
@@ -447,6 +451,7 @@ const LeftSide = () => {
                 y={jewerlyCoord.y}
                 width={jewerlySize.width}
                 height={jewerlySize.height}
+                crossOrigin="Anonymous"
               />
             )}
             {clothesImg && (
@@ -456,6 +461,7 @@ const LeftSide = () => {
                 y={clothesCoord.y}
                 width={clothesSize.width}
                 height={clothesSize.height}
+                crossOrigin="Anonymous"
               />
             )}
             {eyeWearImg && (
@@ -465,6 +471,7 @@ const LeftSide = () => {
                 y={eyeWearCoord.y}
                 width={eyeWearSize.width}
                 height={eyeWearSize.height}
+                crossOrigin="Anonymous"
               />
             )}
             {stickerImage && (
