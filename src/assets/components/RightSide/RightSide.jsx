@@ -7,7 +7,7 @@ const RightSide = () => {
   const {
     hatsAndMasks,
     backgrounds,
-    images2,
+    clotheses,
     jewerlys,
     eyeWears,
     handleSlideClick,
@@ -17,7 +17,7 @@ const RightSide = () => {
     { id: 1, images: hatsAndMasks, swiperName: 'HAT-MASK' },
     { id: 2, images: eyeWears, swiperName: 'EYEWEAR' },
     { id: 3, images: backgrounds, swiperName: 'BACKGROUND' },
-    { id: 4, images: images2, swiperName: 'CLOTHES' },
+    { id: 4, images: clotheses, swiperName: 'CLOTHES' },
     { id: 5, images: jewerlys, swiperName: 'JEWERLY' },
   ];
 

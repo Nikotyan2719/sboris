@@ -41,22 +41,43 @@ const LeftSide = () => {
   const [hatAndMaskImg, setHatAndMaskImg] = useState(null);
   const [hatAndMaskCoord, setHatAndMaskCoord] = useState({ x: 0, y: 0 });
   const [hatAndMaskSize, setHatAndMaskSize] = useState({ width: 0, height: 0 });
-
-  //
+  //Одежда
+  const [clothesImg, setClothesImg] = useState(null);
+  const [clothesCoord, setClothesCoord] = useState({ x: 0, y: 0 });
+  const [clothesSize, setClothesSize] = useState({ width: 0, height: 0 });
 
   //Контекст
   const {
     hatAndMask,
     background,
+    clothes,
     jewerly,
     eyeWear,
     hatsAndMasks,
     backgrounds,
+    clotheses,
     eyeWears,
     jewerlys,
   } = useContext(imageContext);
 
   //Юзэффект для каждого элемента
+  useEffect(() => {
+    console.log('im clothes');
+    if (clothes === 'del') {
+      setClothesImg(null);
+    } else if (clothes) {
+      const img = new window.Image();
+      img.src = clothes.src;
+      setClothesCoord({ x: clothes.x, y: clothes.y });
+      setClothesSize({
+        width: clothes.width,
+        height: clothes.height,
+      });
+      img.onload = () => {
+        setClothesImg(img);
+      };
+    }
+  }, [clothes]);
   useEffect(() => {
     if (hatAndMask === 'del') {
       setHatAndMaskImg(null);
@@ -245,8 +266,22 @@ const LeftSide = () => {
       jewerlys[Math.floor(Math.random() * jewerlys.length)];
     const randomHatAndMask =
       hatsAndMasks[Math.floor(Math.random() * hatsAndMasks.length)];
+    const randomClothes =
+      clotheses[Math.floor(Math.random() * clotheses.length)];
 
     setBackgroundImage(randomBackground.src);
+
+    setClothesImg(null);
+    setClothesCoord({ x: randomClothes.x, y: randomClothes.y });
+    setClothesSize({
+      width: randomClothes.width,
+      height: randomClothes.height,
+    });
+    const img4 = new window.Image();
+    img4.src = randomClothes.src;
+    img4.onload = () => {
+      setClothesImg(img4);
+    };
 
     setEyeWearImg(null);
     setEyeWearCoord({ x: randomEyewear.x, y: randomEyewear.y });
@@ -305,6 +340,7 @@ const LeftSide = () => {
     setEyeWearImg(null);
     setJewerlyImg(null);
     setHatAndMaskImg(null);
+    setClothesImg(null);
   };
 
   //Сохранение
@@ -394,6 +430,7 @@ const LeftSide = () => {
                 height={303}
               />
             )}
+
             {hatAndMaskImg && (
               <Image
                 image={hatAndMaskImg}
@@ -410,6 +447,15 @@ const LeftSide = () => {
                 y={jewerlyCoord.y}
                 width={jewerlySize.width}
                 height={jewerlySize.height}
+              />
+            )}
+            {clothesImg && (
+              <Image
+                image={clothesImg}
+                x={clothesCoord.x}
+                y={clothesCoord.y}
+                width={clothesSize.width}
+                height={clothesSize.height}
               />
             )}
             {eyeWearImg && (

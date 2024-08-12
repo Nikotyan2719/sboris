@@ -3,7 +3,7 @@ import { createContext } from 'react';
 const ImageContext = createContext({
   hatsAndMasks: [],
   backgrounds: [],
-  images2: [],
+  clotheses: [],
   jewerlys: [],
   eyeWears: [],
   hatAndMask: null,

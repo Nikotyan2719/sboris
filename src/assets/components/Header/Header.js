@@ -32,10 +32,26 @@ const Header = () => {
               Icon={IconTelegram}
               Link="https://t.me/boris_cto"
             />
-            <Links backgroundColor="rgb(0, 0, 0)" Icon={IconX} />
-            <Links backgroundColor="rgb(0, 0, 0)" Icon={IconEagle} />
-            <Links backgroundColor="rgb(255, 255, 255)" Icon={IconDex} />
-            <Links backgroundColor="rgb(47, 56, 71)" Icon={IconCube} />
+            <Links
+              backgroundColor="rgb(0, 0, 0)"
+              Icon={IconX}
+              Link="https://x.com/boris_cto"
+            />
+            <Links
+              backgroundColor="rgb(0, 0, 0)"
+              Icon={IconEagle}
+              Link="https://dexscreener.com/ton/eqdvbfekdjbqz3dac5wbhsms1iffqvkyygh8du2mbakqxtx7"
+            />
+            <Links
+              backgroundColor="rgb(255, 255, 255)"
+              Icon={IconDex}
+              Link="https://www.dextools.io/app/ru/ton/pair-explorer/EQDvBFeKDjBqz3DAc5wbHsMs1IFfQVKYYGH8Du2MbAkqXtx7?t=1720715394035"
+            />
+            <Links
+              backgroundColor="rgb(47, 56, 71)"
+              Icon={IconCube}
+              Link="https://dedust.io/swap/TON/EQC_Br9_cFIywrKoAGR3C5EBnrMrWueU0zqQ-0OsldqoADyW"
+            />
           </div>
         </div>
       </Container>
