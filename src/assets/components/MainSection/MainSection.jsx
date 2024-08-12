@@ -533,26 +533,20 @@ const MainSection = () => {
   ];
 
   const handleSlideClick = (image, swiperId) => {
-    console.log(swiperId);
     switch (swiperId) {
       case 1:
-        console.log(`Clicked on slide HatAndMask: ${image.src}`);
         setHatAndMask(image);
         break;
       case 2:
-        console.log(`Clicked on slide EyeWear: ${image.src}`);
         setEyeWear(image);
         break;
       case 3:
-        console.log(`Clicked on slide Background: ${image.src}`);
         setBackground(image);
         break;
       case 4:
-        console.log(`Clicked on slide Clothes: ${image.src}`);
         setClothes(image);
         break;
       case 5:
-        console.log(`Clicked on slide Jewerly: ${image.src}`);
         setJewerly(image);
         break;
       default:
@@ -562,23 +556,18 @@ const MainSection = () => {
   const removeCurrentItem = (swiperId) => {
     switch (swiperId) {
       case 1:
-        console.log(`Clicked on delete HatAndMask`);
         setHatAndMask('del');
         break;
       case 2:
-        console.log(`Clicked on delete EyeWear`);
         setEyeWear('del');
         break;
       case 3:
-        console.log(`Clicked on delete Background`);
         setBackground('del');
         break;
       case 4:
-        console.log(`Clicked on delete Clothes`);
         setClothes('del');
         break;
       case 5:
-        console.log(`Clicked on delete Jewerly`);
         setJewerly('del');
         break;
       default:
