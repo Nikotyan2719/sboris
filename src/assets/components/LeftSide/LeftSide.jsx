@@ -13,6 +13,7 @@ const LeftSide = () => {
   const fileStickerRef = useRef(null);
   const textRef = useRef(null);
   const transformerRef = useRef(null);
+
   //Изначальный рендер + бг
   const [backgroundImage, setBackgroundImage] = useState(null);
   const [bearImage, setBearImage] = useState(null);
@@ -40,6 +41,8 @@ const LeftSide = () => {
   const [hatAndMaskImg, setHatAndMaskImg] = useState(null);
   const [hatAndMaskCoord, setHatAndMaskCoord] = useState({ x: 0, y: 0 });
   const [hatAndMaskSize, setHatAndMaskSize] = useState({ width: 0, height: 0 });
+
+  //
 
   //Контекст
   const {
@@ -135,7 +138,7 @@ const LeftSide = () => {
   useEffect(() => {
     // Загрузка изображения медведя при первом рендере
     const img = new window.Image();
-    img.src = './images/logo/bearPicture.png'; // Замените на путь к вашему изображению медведя
+    img.src = './images/logo/bearPicture2.png'; // Замените на путь к вашему изображению медведя
     img.onload = () => {
       setBearImage(img);
     };
@@ -305,27 +308,25 @@ const LeftSide = () => {
   };
 
   //Сохранение
+
   const handleSaveImage = () => {
-    const stage = stageRef.current;
-    const pixelRatio = window.devicePixelRatio || 1; // Получаем коэффициент масштабирования
+    if (stageRef.current) {
+      const stage = stageRef.current.getStage();
 
-    // Временно увеличиваем размер канваса
-    stage.width(stage.width() * pixelRatio);
-    stage.height(stage.height() * pixelRatio);
+      const dataUrl = stage.toDataURL({
+        pixelRatio: 5,
+        mimeType: 'image/png',
+        quality: 1.0,
+      });
 
-    const dataURL = stage.toDataURL({ mimeType: 'image/png', quality: 1 });
+      const link = document.createElement('a');
+      link.download = 'BorisMeme.png';
+      link.href = dataUrl;
 
-    // Возвращаем оригинальный размер канваса
-    stage.width(stage.width() / pixelRatio);
-    stage.height(stage.height() / pixelRatio);
-
-    // Создание ссылки для загрузки изображения
-    const link = document.createElement('a');
-    link.download = 'BorisMeme.png';
-    link.href = dataURL;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
   };
 
   return (
