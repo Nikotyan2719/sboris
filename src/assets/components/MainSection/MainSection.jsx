@@ -353,7 +353,7 @@ const MainSection = () => {
   const eyeWears = [
     {
       id: 1,
-      src: './images/eyewear/eyewear1.png',
+      src: './images/eyewear/eyeWear1.png',
       x: 170,
       y: 106,
       width: 124,
@@ -361,7 +361,7 @@ const MainSection = () => {
     },
     {
       id: 2,
-      src: './images/eyewear/eyewear2.png',
+      src: './images/eyewear/eyeWear2.png',
       x: 139,
       y: 96,
       width: 78,
@@ -369,7 +369,7 @@ const MainSection = () => {
     },
     {
       id: 3,
-      src: './images/eyewear/eyewear3.png',
+      src: './images/eyewear/eyeWear3.png',
       x: 161,
       y: 80,
       width: 143,
@@ -377,7 +377,7 @@ const MainSection = () => {
     },
     {
       id: 4,
-      src: './images/eyewear/eyewear4.png',
+      src: './images/eyewear/eyeWear4.png',
       x: 170,
       y: 109,
       width: 122,
@@ -385,7 +385,7 @@ const MainSection = () => {
     },
     {
       id: 5,
-      src: './images/eyewear/eyewear5.png',
+      src: './images/eyewear/eyeWear5.png',
       x: 169,
       y: 103,
       width: 123,
@@ -393,7 +393,7 @@ const MainSection = () => {
     },
     {
       id: 6,
-      src: './images/eyewear/eyewear6.png',
+      src: './images/eyewear/eyeWear6.png',
       x: 148,
       y: 94,
       width: 165,
@@ -401,7 +401,7 @@ const MainSection = () => {
     },
     {
       id: 7,
-      src: './images/eyewear/eyewear7.png',
+      src: './images/eyewear/eyeWear7.png',
       x: 179,
       y: 103,
       width: 106,
@@ -409,7 +409,7 @@ const MainSection = () => {
     },
     {
       id: 8,
-      src: './images/eyewear/eyewear8.png',
+      src: './images/eyewear/eyeWear8.png',
       x: 151,
       y: 86,
       width: 151,
@@ -417,7 +417,7 @@ const MainSection = () => {
     },
     {
       id: 9,
-      src: './images/eyewear/eyewear9.png',
+      src: './images/eyewear/eyeWear9.png',
       x: 126,
       y: 27,
       width: 187,
@@ -425,7 +425,7 @@ const MainSection = () => {
     },
     {
       id: 10,
-      src: './images/eyewear/eyewear10.png',
+      src: './images/eyewear/eyeWear10.png',
       x: 156,
       y: 98,
       width: 150,
@@ -433,7 +433,7 @@ const MainSection = () => {
     },
     {
       id: 11,
-      src: './images/eyewear/eyewear11.png',
+      src: './images/eyewear/eyeWear11.png',
       x: 130,
       y: 82,
       width: 203,
@@ -441,7 +441,7 @@ const MainSection = () => {
     },
     {
       id: 12,
-      src: './images/eyewear/eyewear12.png',
+      src: './images/eyewear/eyeWear12.png',
       x: 171,
       y: 100,
       width: 124,
@@ -452,7 +452,7 @@ const MainSection = () => {
   const clotheses = [
     {
       id: 1,
-      src: './images/eyewear/eyewear1.png',
+      src: './images/logo/next.png',
       x: 170,
       y: 106,
       width: 124,
@@ -460,7 +460,7 @@ const MainSection = () => {
     },
     {
       id: 2,
-      src: './images/eyewear/eyewear2.png',
+      src: './images/logo/next.png',
       x: 139,
       y: 96,
       width: 78,
@@ -468,7 +468,7 @@ const MainSection = () => {
     },
     {
       id: 3,
-      src: './images/eyewear/eyewear3.png',
+      src: './images/logo/next.png',
       x: 161,
       y: 80,
       width: 143,
