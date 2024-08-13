@@ -63,7 +63,6 @@ const LeftSide = () => {
 
   //Юзэффект для каждого элемента
   useEffect(() => {
-    console.log('im clothes');
     if (clothes === 'del') {
       setClothesImg(null);
     } else if (clothes) {
@@ -149,7 +148,6 @@ const LeftSide = () => {
   }, [backgroundImage]);
 
   const handleStickerChange = (event) => {
-    console.log('in sticker');
     const file = event.target.files[0];
     if (file) {
       const imageUrl = URL.createObjectURL(file);
@@ -185,7 +183,6 @@ const LeftSide = () => {
   };
 
   const handleFileChange = (event) => {
-    console.log('in background');
     const file = event.target.files[0];
     if (file) {
       const imageUrl = URL.createObjectURL(file);
@@ -221,7 +218,6 @@ const LeftSide = () => {
   };
 
   const handleTextClick = (e) => {
-    console.log('выбран текст');
     setSelectedText(e.target);
     setIsTextSized(false);
     setShowDeleteButton(true);
@@ -229,7 +225,6 @@ const LeftSide = () => {
     setSelectedSticker(null);
   };
   const handleStickerClick = (e) => {
-    console.log('выбран стикер');
     setSelectedSticker(e.target);
     setIsStickerSized(false);
     setShowDeleteButton(true);
@@ -239,7 +234,6 @@ const LeftSide = () => {
 
   //Удаление стикера или текста
   const handleDelete = () => {
-    console.log('in delete');
     if (selectedText) {
       selectedText.destroy();
       setSelectedText(null);
@@ -433,7 +427,16 @@ const LeftSide = () => {
                 crossOrigin="Anonymous"
               />
             )}
-
+            {clothesImg && (
+              <Image
+                image={clothesImg}
+                x={clothesCoord.x}
+                y={clothesCoord.y}
+                width={clothesSize.width}
+                height={clothesSize.height}
+                crossOrigin="Anonymous"
+              />
+            )}
             {hatAndMaskImg && (
               <Image
                 image={hatAndMaskImg}
@@ -451,16 +454,6 @@ const LeftSide = () => {
                 y={jewerlyCoord.y}
                 width={jewerlySize.width}
                 height={jewerlySize.height}
-                crossOrigin="Anonymous"
-              />
-            )}
-            {clothesImg && (
-              <Image
-                image={clothesImg}
-                x={clothesCoord.x}
-                y={clothesCoord.y}
-                width={clothesSize.width}
-                height={clothesSize.height}
                 crossOrigin="Anonymous"
               />
             )}
@@ -515,9 +508,9 @@ const LeftSide = () => {
                 x={text.x}
                 y={text.y}
                 fontSize={30}
-                fill="black"
+                fill="white"
                 stroke="black"
-                strokeWidth={2}
+                strokeWidth={1}
                 draggable
                 scaleX={textScale.scaleX}
                 scaleY={textScale.scaleY}
